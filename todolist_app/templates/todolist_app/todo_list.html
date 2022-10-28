@@ -1,0 +1,14 @@
+<div>
+    Todo_List Template
+    <h1>TODOs</h1>
+    <ul>
+        {% for todo in object_list %}
+            <li>{{ todo.id }}:: {{ todo.created|date }} - {{ todo.name }} {{ todo.description }}  <a href="{% url 'detail' todo.id %}">detail</a>
+        </li>
+        {% empty %}
+            <li>No TODO yet.</li>
+        {% endfor %}
+        </ul>
+    <a href="/create">Create with /create</a>
+    <a href="{% url 'create' %}">Create with { %url 'create'% }</a>
+</div>
